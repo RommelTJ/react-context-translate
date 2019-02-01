@@ -5,12 +5,16 @@ class Button extends React.Component {
 
     // static contextType = LanguageContext; // this is a particular variable name.
 
+    updateName = (value) => {
+        return value === "english" ? "Submit" : "Enviar";
+    };
+
     render() {
         // const text = this.context === "english" ? "Submit" : "Enviar";
         return (
             <button className="ui button primary">
                 <LanguageContext.Consumer>
-                    {(value) => value === "english" ? "Submit": "Enviar"}
+                    {(value) => this.updateName(value)}
                 </LanguageContext.Consumer>
             </button>
         );
