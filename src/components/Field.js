@@ -5,6 +5,10 @@ class Field extends React.Component {
 
     // static contextType = LanguageContext; // this is a particular variable name.
 
+    updateLabel = (value) => {
+        return value === "english" ? "Name" : "Nombre";
+    };
+
     render() {
         // const text = this.context === "english" ? "Name" : "Nombre";
 
@@ -12,7 +16,7 @@ class Field extends React.Component {
             <div className="ui field">
                 <label>
                     <LanguageContext.Consumer>
-                        {(value) => value === "english" ? "Name" : "Nombre"}
+                        {(value) => this.updateLabel(value)}
                     </LanguageContext.Consumer>
                 </label>
                 <input/>
