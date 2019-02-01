@@ -20,4 +20,4 @@ export class LanguageStore extends React.Component {
 
 }
 
-export default LanguageStore;
+export default Context;
