@@ -4,15 +4,15 @@ import ColorContext from '../contexts/ColorContext';
 
 class Button extends React.Component {
 
-    updateName = (value) => {
-        return value === "english" ? "Submit" : "Enviar";
+    updateName = (language) => {
+        return language === "english" ? "Submit" : "Enviar";
     };
 
-    updateColorButton = (value) => {
+    updateColorButton = (color) => {
         return (
-            <button className={`ui button ${value}`}>
+            <button className={`ui button ${color}`}>
                 <LanguageContext.Consumer>
-                    {(value) => this.updateName(value)}
+                    {({ language }) => this.updateName(language)}
                 </LanguageContext.Consumer>
             </button>
         );
@@ -21,7 +21,7 @@ class Button extends React.Component {
     render() {
         return (
             <ColorContext.Consumer>
-                {(value) => this.updateColorButton(value)}
+                {(color) => this.updateColorButton(color)}
             </ColorContext.Consumer>
         );
     }
